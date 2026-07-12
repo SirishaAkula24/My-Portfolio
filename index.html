@@ -227,6 +227,11 @@
     display:flex; align-items:center; gap:6px;
   }
   .proj-full{grid-column:1 / -1;}
+  .proj-diagram{
+    margin-top:16px; border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden; background:#FAFBFC;
+  }
+  .proj-diagram svg{display:block; width:100%; height:auto;}
 
   /* EDUCATION */
   .edu-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
@@ -466,15 +471,157 @@
 
         <div class="proj-card proj-full reveal">
           <div class="proj-top">
-            <div class="proj-title">End-to-End Coffee Shop Analytics Platform</div>
+            <div class="proj-title">Retail ERP &amp; FP&amp;A Data Platform</div>
             <div class="proj-stat">In progress</div>
           </div>
-          <p class="proj-desc">Designing and building a centralized data warehouse integrating sales, customer, inventory, finance, HR, and operational data into one reporting layer. ETL pipelines in Python and SQL consolidate multi-source business data, delivered through interactive Power BI dashboards for KPI reporting, forecasting, and business intelligence across departments.</p>
+          <p class="proj-desc">Designed an end-to-end Retail ERP data model spanning Sales, Procurement, Inventory, and Finance/FP&amp;A in SQL Server, applying enterprise database design principles — normalization, primary/foreign keys, bridge tables, and header-detail patterns. Modeled full procurement-to-payment and sales-to-cash workflows (PO → Supplier Invoice → Inventory Receipt reconciliation, split-payment logic, historical pricing) and applied dimensional modeling concepts (Fact/Dimension tables, Slowly Changing Dimensions) as the foundation for FP&amp;A reporting. ETL pipelines and Power BI dashboards are planned as the next phase.</p>
           <div class="proj-tags">
-            <span class="proj-tag">SQL</span><span class="proj-tag">Python</span><span class="proj-tag">ETL</span>
-            <span class="proj-tag">Power BI</span><span class="proj-tag">AWS</span>
+            <span class="proj-tag">SQL Server</span><span class="proj-tag">Data Modeling</span><span class="proj-tag">ERP Design</span>
+            <span class="proj-tag">Business Analysis</span><span class="proj-tag">FP&amp;A</span>
           </div>
-          <div class="proj-link">↳ Add GitHub / live dashboard link here</div>
+          <div class="proj-diagram">
+<svg viewBox="0 0 1600 860" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Arial, sans-serif">
+  <defs>
+    <marker id="arrowNavy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1F3864"/>
+    </marker>
+    <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#B5772A"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2F7A52"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9AA3B2"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="860" fill="#FAFBFC"/>
+
+  <!-- Title -->
+  <text x="40" y="42" font-size="24" font-weight="800" fill="#14213D">Retail ERP &amp; FP&amp;A Data Platform</text>
+  <text x="40" y="66" font-size="14" fill="#5B6472">Logical Entity Relationship Overview — Sirisha Akula</text>
+
+  <!-- Legend -->
+  <g transform="translate(1120,20)">
+    <rect x="0" y="0" width="10" height="10" fill="#1F3864"/><text x="16" y="9" font-size="11.5" fill="#333">Sales flow</text>
+    <rect x="0" y="18" width="10" height="10" fill="#B5772A"/><text x="16" y="27" font-size="11.5" fill="#333">Procurement flow</text>
+    <rect x="140" y="0" width="10" height="10" fill="#2F7A52"/><text x="156" y="9" font-size="11.5" fill="#333">Inventory movement</text>
+    <rect x="140" y="18" width="10" height="10" fill="#9AA3B2"/><text x="156" y="27" font-size="11.5" fill="#333">Master-data reference</text>
+  </g>
+
+  <!-- ================= BAND A: MASTER DATA ================= -->
+  <rect x="24" y="88" width="1552" height="172" rx="10" fill="#EEF1F7" stroke="#DCE2ED"/>
+  <text x="44" y="112" font-size="13" font-weight="700" fill="#1F3864" letter-spacing="0.06em">MASTER DATA</text>
+
+  <!-- Row 1 master boxes -->
+  <!-- x positions: 40,228,416,604,792,980,1168,1356 ; y=125 h=46 w=170 -->
+  <g font-size="13" font-weight="600">
+    <g id="b-stores"><rect x="40" y="125" width="170" height="46" rx="6" fill="#fff" stroke="#B9C2D6"/><text x="125" y="153" text-anchor="middle" fill="#14213D">Stores</text></g>
+    <g id="b-customers"><rect x="228" y="125" width="170" height="46" rx="6" fill="#fff" stroke="#B9C2D6"/><text x="313" y="153" text-anchor="middle" fill="#14213D">Customers</text></g>
+    <g id="b-employees"><rect x="416" y="125" width="170" height="46" rx="6" fill="#fff" stroke="#B9C2D6"/><text x="501" y="153" text-anchor="middle" fill="#14213D">Employees</text></g>
+    <g id="b-suppliers"><rect x="604" y="125" width="170" height="46" rx="6" fill="#fff" stroke="#B9C2D6"/><text x="689" y="153" text-anchor="middle" fill="#14213D">Suppliers</text></g>
+    <g id="b-products"><rect x="792" y="125" width="170" height="46" rx="6" fill="#fff" stroke="#B9C2D6"/><text x="877" y="153" text-anchor="middle" fill="#14213D">Products</text></g>
+    <g id="b-categories"><rect x="980" y="125" width="170" height="46" rx="6" fill="#fff" stroke="#B9C2D6"/><text x="1065" y="153" text-anchor="middle" fill="#14213D">Categories</text></g>
+    <g id="b-invitems"><rect x="1168" y="125" width="170" height="46" rx="6" fill="#DCE8DF" stroke="#8FB89A"/><text x="1253" y="153" text-anchor="middle" fill="#1B4D2E">Inventory Items</text></g>
+    <g id="b-paymethods"><rect x="1356" y="125" width="170" height="46" rx="6" fill="#fff" stroke="#B9C2D6"/><text x="1441" y="147" text-anchor="middle" fill="#14213D">Payment</text><text x="1441" y="162" text-anchor="middle" fill="#14213D">Methods</text></g>
+  </g>
+
+  <!-- Categories -> Products -->
+  <path d="M980,148 L962,148" stroke="#9AA3B2" stroke-width="1.5" fill="none" marker-end="url(#arrowGray)"/>
+
+  <!-- Row 2: Product Recipes / BOM -->
+  <g font-size="12.5" font-weight="600">
+    <rect x="796" y="196" width="180" height="40" rx="6" fill="#FBF2E3" stroke="#E0BE86"/>
+    <text x="886" y="212" text-anchor="middle" fill="#7A4E15">Product Recipes /</text>
+    <text x="886" y="226" text-anchor="middle" fill="#7A4E15">Bill of Materials</text>
+  </g>
+  <path d="M877,171 L886,196" stroke="#9AA3B2" stroke-width="1.5" fill="none" marker-end="url(#arrowGray)" stroke-dasharray="4,3"/>
+
+  <!-- ================= BAND B: SALES PROCESS ================= -->
+  <rect x="24" y="272" width="770" height="128" rx="10" fill="#F1F4FA" stroke="#DCE2ED"/>
+  <text x="44" y="296" font-size="13" font-weight="700" fill="#1F3864" letter-spacing="0.06em">SALES PROCESS</text>
+
+  <g font-size="13" font-weight="600">
+    <rect x="228" y="312" width="170" height="46" rx="6" fill="#1F3864"/><text x="313" y="340" text-anchor="middle" fill="#fff">Orders</text>
+    <rect x="438" y="312" width="170" height="46" rx="6" fill="#1F3864"/><text x="523" y="340" text-anchor="middle" fill="#fff">Order Items</text>
+    <rect x="648" y="312" width="130" height="46" rx="6" fill="#1F3864"/><text x="713" y="340" text-anchor="middle" fill="#fff">Payments</text>
+  </g>
+  <!-- chain arrows -->
+  <path d="M398,335 L436,335" stroke="#1F3864" stroke-width="2" fill="none" marker-end="url(#arrowNavy)"/>
+  <path d="M608,335 L646,335" stroke="#1F3864" stroke-width="2" fill="none" marker-end="url(#arrowNavy)"/>
+  <!-- Customers -> Orders (same column, straight) -->
+  <path d="M313,171 L313,310" stroke="#1F3864" stroke-width="2" fill="none" marker-end="url(#arrowNavy)"/>
+  <!-- Products -> Order Items (diagonal) -->
+  <path d="M850,171 C 850,240 560,260 523,310" stroke="#9AA3B2" stroke-width="1.5" fill="none" marker-end="url(#arrowGray)" stroke-dasharray="4,3"/>
+  <!-- Payment Methods -> Payments (long diagonal reference) -->
+  <path d="M1400,171 C 1250,260 850,280 713,310" stroke="#9AA3B2" stroke-width="1.5" fill="none" marker-end="url(#arrowGray)" stroke-dasharray="4,3"/>
+
+  <!-- ================= BAND C: PROCUREMENT PROCESS ================= -->
+  <rect x="814" y="272" width="762" height="360" rx="10" fill="#FBF6EE" stroke="#EAD9BA"/>
+  <text x="834" y="296" font-size="13" font-weight="700" fill="#8A5A1B" letter-spacing="0.06em">PROCUREMENT PROCESS</text>
+
+  <g font-size="12.5" font-weight="600">
+    <rect x="838" y="312" width="160" height="46" rx="6" fill="#B5772A"/><text x="918" y="333" text-anchor="middle" fill="#fff">Purchase</text><text x="918" y="347" text-anchor="middle" fill="#fff">Orders</text>
+    <rect x="1018" y="312" width="160" height="46" rx="6" fill="#B5772A"/><text x="1098" y="333" text-anchor="middle" fill="#fff">Purchase Order</text><text x="1098" y="347" text-anchor="middle" fill="#fff">Items</text>
+    <rect x="1198" y="312" width="160" height="46" rx="6" fill="#B5772A"/><text x="1278" y="333" text-anchor="middle" fill="#fff">Supplier</text><text x="1278" y="347" text-anchor="middle" fill="#fff">Invoices</text>
+    <rect x="1378" y="312" width="160" height="46" rx="6" fill="#B5772A"/><text x="1458" y="333" text-anchor="middle" fill="#fff">Supplier Invoice</text><text x="1458" y="347" text-anchor="middle" fill="#fff">Items</text>
+  </g>
+  <path d="M998,335 L1016,335" stroke="#B5772A" stroke-width="2" fill="none" marker-end="url(#arrowGold)"/>
+  <path d="M1178,335 L1196,335" stroke="#B5772A" stroke-width="2" fill="none" marker-end="url(#arrowGold)"/>
+  <path d="M1358,335 L1376,335" stroke="#B5772A" stroke-width="2" fill="none" marker-end="url(#arrowGold)"/>
+  <!-- Suppliers -> Purchase Orders (same column-ish, straight-ish) -->
+  <path d="M689,171 C 689,250 850,280 918,310" stroke="#B5772A" stroke-width="2" fill="none" marker-end="url(#arrowGold)"/>
+  <!-- Products -> PO Items reference -->
+  <path d="M905,171 C 950,240 1060,280 1098,310" stroke="#9AA3B2" stroke-width="1.5" fill="none" marker-end="url(#arrowGray)" stroke-dasharray="4,3"/>
+
+  <g font-size="12.5" font-weight="600">
+    <rect x="1018" y="410" width="160" height="46" rx="6" fill="#B5772A"/><text x="1098" y="431" text-anchor="middle" fill="#fff">Inventory</text><text x="1098" y="445" text-anchor="middle" fill="#fff">Receipts</text>
+    <rect x="1198" y="410" width="160" height="46" rx="6" fill="#B5772A"/><text x="1278" y="431" text-anchor="middle" fill="#fff">Inventory Receipt</text><text x="1278" y="445" text-anchor="middle" fill="#fff">Items</text>
+  </g>
+  <path d="M1178,433 L1196,433" stroke="#B5772A" stroke-width="2" fill="none" marker-end="url(#arrowGold)"/>
+  <!-- Supplier Invoice Items -> Inventory Receipts -->
+  <path d="M1458,358 C 1458,390 1200,392 1098,408" stroke="#B5772A" stroke-width="2" fill="none" marker-end="url(#arrowGold)"/>
+
+  <!-- reconciliation note -->
+  <text x="838" y="500" font-size="12" fill="#8A5A1B" font-style="italic">Business rules: partial deliveries · multiple invoices per PO · quantity verification at receiving</text>
+
+  <!-- ================= BAND D: INVENTORY MOVEMENT ================= -->
+  <rect x="24" y="418" width="770" height="214" rx="10" fill="#EEF6F0" stroke="#CFE4D4"/>
+  <text x="44" y="442" font-size="13" font-weight="700" fill="#2F7A52" letter-spacing="0.06em">INVENTORY MOVEMENT</text>
+
+  <g font-size="13" font-weight="600">
+    <rect x="313" y="470" width="190" height="48" rx="6" fill="#2F7A52"/>
+    <text x="408" y="490" text-anchor="middle" fill="#fff">Inventory</text>
+    <text x="408" y="505" text-anchor="middle" fill="#fff">Consumption</text>
+  </g>
+  <!-- Order Items -> Inventory Consumption -->
+  <path d="M523,358 C 523,410 460,440 420,468" stroke="#2F7A52" stroke-width="2" fill="none" marker-end="url(#arrowGreen)"/>
+  <!-- Product Recipes/BOM -> Inventory Consumption -->
+  <path d="M850,236 C 750,320 520,400 470,468" stroke="#2F7A52" stroke-width="2" fill="none" marker-end="url(#arrowGreen)" stroke-dasharray="4,3"/>
+  <text x="60" y="560" font-size="12" fill="#2F7A52" font-style="italic">Inventory is deducted from Inventory Items based on the product recipe/BOM whenever an order is fulfilled.</text>
+  <text x="60" y="580" font-size="12" fill="#2F7A52" font-style="italic">Inventory is replenished from confirmed Inventory Receipt Items during procurement.</text>
+
+  <!-- Long routed connectors along right margin: Receipt Items -> Inventory Items (stock IN) -->
+  <path d="M1358,433 L1560,433 L1560,148 L1340,148" stroke="#2F7A52" stroke-width="2.2" fill="none" marker-end="url(#arrowGreen)"/>
+  <text x="1565" y="300" font-size="11.5" fill="#2F7A52" font-weight="600" transform="rotate(90 1565,300)" text-anchor="middle">+ stock received</text>
+
+  <!-- Inventory Consumption -> Inventory Items (stock OUT), routed along left margin -->
+  <path d="M313,494 L6,494 L6,148 L38,148" stroke="#2F7A52" stroke-width="2.2" fill="none" marker-end="url(#arrowGreen)" stroke-dasharray="6,3"/>
+  <text x="18" y="300" font-size="11.5" fill="#2F7A52" font-weight="600" transform="rotate(-90 18,300)" text-anchor="middle">&#8722; stock consumed</text>
+
+  <!-- ================= FOOTER NOTE ================= -->
+  <rect x="24" y="655" width="1552" height="150" rx="10" fill="#F7F5F1" stroke="#E7E1D6"/>
+  <text x="44" y="682" font-size="13" font-weight="700" fill="#7A4E15" letter-spacing="0.06em">DESIGN PRINCIPLES APPLIED</text>
+  <text x="44" y="708" font-size="12.5" fill="#4A4A4A">• Master vs. transactional data separation, header–detail pattern (e.g. Orders → Order Items, Purchase Orders → PO Items)</text>
+  <text x="44" y="730" font-size="12.5" fill="#4A4A4A">• Entity–relationship modeling with primary/foreign keys, bridge tables, and business-driven normalization</text>
+  <text x="44" y="752" font-size="12.5" fill="#4A4A4A">• Audit columns (Created_Date, Modified_Date) and soft-delete strategy (Is_Active) on all master entities</text>
+  <text x="44" y="774" font-size="12.5" fill="#4A4A4A">• Dimensional modeling concepts layered on top: Fact vs. Dimension tables, transaction grain, Slowly Changing Dimensions — foundation for FP&amp;A reporting</text>
+  <text x="44" y="796" font-size="12.5" fill="#8A8A8A" font-style="italic">Status: data model complete. ETL pipelines and Power BI dashboards planned as the next phase.</text>
+
+  <text x="44" y="830" font-size="11.5" fill="#9AA3B2">sirishaakula24.github.io/My-Portfolio</text>
+</svg>
+          </div>
         </div>
 
         <div class="proj-card reveal">
@@ -486,7 +633,6 @@
           <div class="proj-tags">
             <span class="proj-tag">Python</span><span class="proj-tag">TensorFlow</span><span class="proj-tag">Keras</span><span class="proj-tag">CNN</span>
           </div>
-          <div class="proj-link">↳ Add GitHub repo link here</div>
         </div>
 
         <div class="proj-card reveal">
@@ -498,7 +644,6 @@
           <div class="proj-tags">
             <span class="proj-tag">SAS Viya</span><span class="proj-tag">CRISP-DM</span><span class="proj-tag">Decision Trees</span>
           </div>
-          <div class="proj-link">↳ Add write-up / slide link here</div>
         </div>
 
         <div class="proj-card reveal">
@@ -510,7 +655,6 @@
           <div class="proj-tags">
             <span class="proj-tag">Power BI</span><span class="proj-tag">DAX</span><span class="proj-tag">Power Query</span>
           </div>
-          <div class="proj-link">↳ Add Power BI publish-to-web link here</div>
         </div>
 
         <div class="proj-card reveal">
@@ -522,7 +666,6 @@
           <div class="proj-tags">
             <span class="proj-tag">Power BI</span><span class="proj-tag">DAX</span><span class="proj-tag">Excel</span>
           </div>
-          <div class="proj-link">↳ Add Power BI publish-to-web link here</div>
         </div>
 
       </div>
